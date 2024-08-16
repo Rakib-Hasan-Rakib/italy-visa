@@ -1,12 +1,14 @@
 import { FiMenu } from "react-icons/fi";
-import { useState } from "react";
+import { useContext, useState } from "react";
 // import arrowUp from "../../assets/icons/arrow_up.png";
 import logo from "../../assets/flag.png";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
   const MenuItem = (
     <>
@@ -21,8 +23,19 @@ const Navbar = () => {
         <Link to="/check">Visa Check</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        {user ? (
+          <Link onClick={() => logOut()}>Logout</Link>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </li>
+      {user && (
+        <img
+          src={user?.photoURL}
+          alt="user photo"
+          className="w-12 h-12 rounded-full"
+        />
+      )}
 
       {/* <button
         className="item-border px-2 md:px-4 py-1 rounded-lg
@@ -37,7 +50,10 @@ const Navbar = () => {
     <>
       <div className="md:hidden w-[100vw]">
         <div className="navbar py-2 flex justify-between items-center w-11/12 mx-auto">
-          <Link to="/" className="text-xl tracking-wide md:tracking-widest text-white flex items-center gap-4 md:hidden">
+          <Link
+            to="/"
+            className="text-xl tracking-wide md:tracking-widest text-white flex items-center gap-4 md:hidden"
+          >
             <img
               src={logo}
               alt="brand logo"
@@ -74,7 +90,10 @@ const Navbar = () => {
 
       <div className="navbar-center hidden md:block w-[100vw]">
         <div className="flex justify-between items-center w-11/12 mx-auto">
-          <Link to="/" className="text-xl tracking-wide md:tracking-widest text-white flex items-center gap-1">
+          <Link
+            to="/"
+            className="text-xl tracking-wide md:tracking-widest text-white flex items-center gap-1"
+          >
             <img
               src={logo}
               alt="brand logo"

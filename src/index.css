@@ -8,3 +8,18 @@
     background: transparent;
     /* position: absolute; */
 }
+
+.btn {
+    border-radius: 1px 20px 1px 20px;
+    @apply bg-green-600 w-full py-3 font-semibold
+}
+
+.btn-two {
+    border-radius: 1px 20px 1px 20px;
+    @apply bg-green-600 w-full py-2 font-semibold
+}
+
+.btn:hover , .btn-two:hover {
+    transition: all 50ms ease-in;
+    border-radius: 5px;
+}
