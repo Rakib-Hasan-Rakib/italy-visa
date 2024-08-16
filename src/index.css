@@ -19,7 +19,17 @@
     @apply bg-green-600 w-full py-2 font-semibold
 }
 
-.btn:hover , .btn-two:hover {
+.btn:hover, .btn-two:hover {
     transition: all 50ms ease-in;
     border-radius: 5px;
+}
+
+
+.gradient-text {
+    background: linear-gradient(to bottom, #09e5e5, #8efa6d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    padding: 20px 0;
 }

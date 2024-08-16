@@ -32,7 +32,7 @@ const Banner = () => {
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>
-              <h2 className=" text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
+              <h2 className="gradient-text text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
                 Italy’s Hidden Treasures
               </h2>
             </Fade>
@@ -47,7 +47,7 @@ const Banner = () => {
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>
-              <h2 className=" text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
+              <h2 className="gradient-text text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
                 The Art Lover’s Italy
               </h2>
             </Fade>
@@ -62,7 +62,7 @@ const Banner = () => {
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>
-              <h2 className=" text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
+              <h2 className="gradient-text text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
                 Family Travel in Italy
               </h2>
             </Fade>

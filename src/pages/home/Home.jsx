@@ -1,6 +1,7 @@
 import Box from "../../components/Box";
 import Navbar from "../../components/navbar/Navbar";
 import Banner from "./banner/Banner";
+import Services from "./Services";
 
 const Home = () => {
   return (
@@ -11,6 +12,9 @@ const Home = () => {
         </div>
         <Banner />
       </div>
+      <Box>
+        <Services />
+      </Box>
     </>
   );
 };

@@ -88,7 +88,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="navbar-center hidden md:block w-[100vw]">
+      <div className="navbar-center hidden md:block w-[98vw]">
         <div className="flex justify-between items-center w-11/12 mx-auto">
           <Link
             to="/"

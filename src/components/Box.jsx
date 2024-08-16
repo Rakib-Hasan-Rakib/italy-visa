@@ -1,7 +1,7 @@
 const Box = ({ children }) => {
   return (
     <>
-      <div className="w-11/12 lg:w-10/12 mx-auto">{children}</div>
+      <div className="w-full lg:w-11/12 mx-auto">{children}</div>
     </>
   );
 };
