@@ -18,37 +18,37 @@ const Services = () => {
           heading="University Selection"
           desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aliquam commodi soluta amet quidem accusantium maxime aut aspernatur quibusdam neque."
         >
-          <FaUniversity className="text-xl lg:text-4xl flex justify-center items-center" />
+          <FaUniversity className="text-3xl lg:text-4xl flex justify-center items-center" />
         </Card>
         <Card
           heading="Visa Assistance"
           desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aliquam commodi soluta amet quidem accusantium maxime aut aspernatur quibusdam neque."
         >
-          <MdOutlineDocumentScanner className="text-xl lg:text-4xl flex justify-center items-center" />
+          <MdOutlineDocumentScanner className="text-3xl lg:text-4xl flex justify-center items-center" />
         </Card>
         <Card
           heading="Coaching Centers"
           desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aliquam commodi soluta amet quidem accusantium maxime aut aspernatur quibusdam neque."
         >
-          <MdOutlineCastForEducation className="text-xl lg:text-4xl flex justify-center items-center" />
+          <MdOutlineCastForEducation className="text-3xl lg:text-4xl flex justify-center items-center" />
         </Card>
         <Card
           heading="Overseas Internship"
           desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aliquam commodi soluta amet quidem accusantium maxime aut aspernatur quibusdam neque."
         >
-          <FaBriefcase className="text-xl lg:text-4xl flex justify-center items-center" />
+          <FaBriefcase className="text-3xl lg:text-4xl flex justify-center items-center" />
         </Card>
         <Card
           heading="Health Insurance"
           desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aliquam commodi soluta amet quidem accusantium maxime aut aspernatur quibusdam neque."
         >
-          <MdOutlineHealthAndSafety className="text-xl lg:text-4xl flex justify-center items-center" />
+          <MdOutlineHealthAndSafety className="text-3xl lg:text-4xl flex justify-center items-center" />
         </Card>
         <Card
           heading="Travel Assistance"
           desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aliquam commodi soluta amet quidem accusantium maxime aut aspernatur quibusdam neque."
         >
-          <MdOutlineTravelExplore className="text-xl lg:text-4xl flex justify-center items-center" />
+          <MdOutlineTravelExplore className="text-3xl lg:text-4xl flex justify-center items-center" />
         </Card>
       </div>
     </>

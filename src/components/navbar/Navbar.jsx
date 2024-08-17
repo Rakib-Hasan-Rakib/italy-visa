@@ -16,8 +16,10 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        {" "}
         <Link to="/about">About</Link>
+      </li>
+      <li>
+        <Link to="/uploadData">Upload Data</Link>
       </li>
       <li>
         <Link to="/check">Visa Check</Link>
@@ -37,12 +39,6 @@ const Navbar = () => {
         />
       )}
 
-      {/* <button
-        className="item-border px-2 md:px-4 py-1 rounded-lg
-           gradient-text gradient-border flex gap-2 items-center lg:text-lg"
-      >
-        Hire Us <img src={arrowUp} alt="" />
-      </button> */}
     </>
   );
 
