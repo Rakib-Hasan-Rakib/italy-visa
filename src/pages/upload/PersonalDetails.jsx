@@ -4,7 +4,6 @@ import SectionTitle from "../../components/SectionTitle";
 import toast from "react-hot-toast";
 
 const PersonalDetails = () => {
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = e.target;
@@ -114,6 +113,7 @@ const PersonalDetails = () => {
               className="input-box"
             />
             <select name="gender" id="gender" className="input-box" required>
+              <option value="select">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>

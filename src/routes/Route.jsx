@@ -6,6 +6,7 @@ import Register from "../pages/register/Register";
 import Upload from "../pages/upload/Upload";
 import Check from "../pages/check/Check";
 import CheckResult from "../pages/check/CheckResult";
+import Info from "../pages/about/Info";
 
 const Route = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const Route = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "/info", element: <Info /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
       {

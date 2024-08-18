@@ -40,8 +40,9 @@ const CheckResult = () => {
     phoneNum,
     email,
     note,
+    cloudArr,
   } = result;
-  console.log(email);
+  console.log(cloudArr);
 
   return (
     <>
@@ -55,15 +56,12 @@ const CheckResult = () => {
       <div>
         <SectionTitle>Your visa application</SectionTitle>
         <Box>
-          {/* <h3 className="text-center text-white font-semibold  bg-green-500 py-2 rounded-md">
-                Personal details
-              </h3> */}
           <table className="min-w-full bg-white border border-gray-300 text-lg">
             <tbody>
               <tr>
                 <td
                   colSpan={4}
-                  className="text-center font-semibold bg-green-400 py-1"
+                  className="text-center font-semibold bg-green-300 py-1"
                 >
                   Personal details
                 </td>
@@ -81,7 +79,7 @@ const CheckResult = () => {
                   className="px-6 py-2 border-b text-sm text-gray-700 text-right align-middle"
                 >
                   <img
-                    src="https://passport-photo.online/images/cms/prepare_light_b364e3ec37.webp?quality=80&format=webp&width=1920"
+                    src={imageUrl}
                     alt="profile"
                     className="w-20 h-20 inline-block"
                   />
@@ -141,7 +139,7 @@ const CheckResult = () => {
               <tr>
                 <td
                   colSpan={4}
-                  className="text-center font-semibold bg-green-400 py-1"
+                  className="text-center font-semibold bg-green-300 py-1"
                 >
                   Company details
                 </td>
@@ -177,7 +175,7 @@ const CheckResult = () => {
               <tr>
                 <td
                   colSpan={4}
-                  className="text-center font-semibold bg-green-400 py-1"
+                  className="text-center font-semibold bg-green-300 py-1"
                 >
                   Passport Details
                 </td>
@@ -199,7 +197,7 @@ const CheckResult = () => {
               <tr>
                 <td
                   colSpan={4}
-                  className="text-center font-semibold bg-green-400 py-1"
+                  className="text-center font-semibold bg-green-300 py-1"
                 >
                   Applicant's Contact Details
                 </td>
@@ -228,6 +226,41 @@ const CheckResult = () => {
               </tr>
             </tbody>
           </table>
+          <div className="mt-4">
+            <h3 className="gradient-text text-xl md:text-2xl lg:text-3xl text-center font-semibold mt-5">
+              Attachments
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              {cloudArr?.length > 0 &&
+                cloudArr.map((data, i) => {
+                  if (data) {
+                    return (
+                      <embed
+                        key={i}
+                        src={data?.url}
+                        type="application/pdf"
+                        width="100%"
+                        height="600px"
+                      />
+                    );
+                  }
+                })}
+            </div>
+            {/* <div className="grid grid-cols-2 gap-4">
+              <embed
+                src="http://res.cloudinary.com/dhcjfmite/image/upload/v1723982917/esxqtu9zjn320dvltjhq.pdf"
+                type="application/pdf"
+                width="100%"
+                height="600px"
+              />
+              <embed
+                src="http://res.cloudinary.com/dhcjfmite/image/upload/v1723982917/esxqtu9zjn320dvltjhq.pdf"
+                type="application/pdf"
+                width="100%"
+                height="600px"
+              />
+            </div> */}
+          </div>
         </Box>
       </div>
     </>

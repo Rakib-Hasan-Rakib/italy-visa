@@ -15,7 +15,7 @@ const Home = () => {
       </div>
       <Box>
         <Services />
-        <Clients/>
+        <Clients />
       </Box>
     </>
   );
