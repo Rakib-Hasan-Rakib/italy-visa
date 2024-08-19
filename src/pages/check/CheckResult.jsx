@@ -66,7 +66,7 @@ const CheckResult = () => {
         toast.error(result.message);
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.log("Error:", error);
       toast.error(error);
     }
   };
