@@ -4,3 +4,11 @@
         font-weight: 400;
         font-style: normal;
 }
+.navbar{
+    background: linear-gradient(to left, #09e5e5, #8efa6d);
+    width: 100%;
+}
+.navlink:hover{
+    color: white;
+    transition: all 200ms ease-in-out;
+}

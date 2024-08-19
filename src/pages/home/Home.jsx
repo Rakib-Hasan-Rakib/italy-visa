@@ -8,9 +8,6 @@ const Home = () => {
   return (
     <>
       <div className="banner-bg relative">
-        <div className="text-white z-10 absolute">
-          <Navbar />
-        </div>
         <Banner />
       </div>
       <Box>

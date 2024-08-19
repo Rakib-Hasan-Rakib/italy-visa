@@ -12,12 +12,12 @@ const Clients = () => {
   const [activeButton, setActiveButton] = useState("next");
 
   const slides = [
-    "https://i.ibb.co/KLp2hKS/pexels-olly-842567.jpg",
-    "https://i.ibb.co/8zmfZz5/pexels-olly-3801426.jpg",
-    "https://i.ibb.co/KLp2hKS/pexels-olly-842567.jpg",
-    "https://i.ibb.co/8zmfZz5/pexels-olly-3801426.jpg",
-    "https://i.ibb.co/KLp2hKS/pexels-olly-842567.jpg",
-    "https://i.ibb.co/8zmfZz5/pexels-olly-3801426.jpg",
+    "https://i.ibb.co/94x29fT/student-one.webp",
+    "https://i.ibb.co/VLxymkq/student-two.jpg",
+    "https://i.ibb.co/S6tQfp6/student-three.jpg",
+    "https://i.ibb.co/BGH76HY/student-five.jpg",
+    "https://i.ibb.co/pnRQnx3/student-four.webp",
+    "https://i.ibb.co/RSM27kZ/student-six.jpg",
   ];
   return (
     <>

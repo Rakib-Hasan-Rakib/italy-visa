@@ -27,13 +27,13 @@ const Banner = () => {
         <SwiperSlide>
           <img
             className="relative h-[100vh] w-full object-cover"
-            src="https://i.ibb.co/ryJWctK/banner-one.jpg"
+            src="https://i.ibb.co/MPxYZmJ/canada-banner-one.jpg"
             alt="man fashion banner"
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>
               <h2 className="gradient-text text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
-                Italy’s Hidden Treasures
+                Canada’s Hidden Treasures
               </h2>
             </Fade>
             <p>-Beyond the Tourist Trails</p>
@@ -42,13 +42,13 @@ const Banner = () => {
         <SwiperSlide>
           <img
             className="relative h-[100vh] w-full object-cover"
-            src="https://i.ibb.co/4TybLCX/banner-two.jpg"
+            src="https://i.ibb.co/bPxLtxv/canada-banner-two.jpg"
             alt="women fashion banner"
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>
               <h2 className="gradient-text text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
-                The Art Lover’s Italy
+                The Art Lover’s Canada
               </h2>
             </Fade>
             <p>-From Renaissance to Modern Masterpieces</p>
@@ -57,13 +57,13 @@ const Banner = () => {
         <SwiperSlide>
           <img
             className="relative h-[100vh] w-full object-cover"
-            src="https://i.ibb.co/Tvd6NHg/banner-three.jpg"
+            src="https://i.ibb.co/LpGQR8t/canada-banner-three.jpg"
             alt="children fashion banner"
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>
               <h2 className="gradient-text text-center text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest">
-                Family Travel in Italy
+                Family Travel in Canada
               </h2>
             </Fade>
             <p className="py-2">-Fun and Educational Experiences</p>

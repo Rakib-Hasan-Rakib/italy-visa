@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Box from "./components/Box";
 import Footer from "./components/Footer";
-// import Home from "./pages/home/Home";
-// import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 
 const Layout = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <div className="text-white z-10">
+        <Navbar />
+      </div>
       <div className="min-h-[calc(100vh-100px)]">
         <Outlet />
       </div>

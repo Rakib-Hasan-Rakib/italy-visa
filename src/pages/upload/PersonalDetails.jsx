@@ -2,14 +2,20 @@ import axios from "axios";
 import Box from "../../components/Box";
 import SectionTitle from "../../components/SectionTitle";
 import toast from "react-hot-toast";
+import { useState } from "react";
+import { ImSpinner4 } from "react-icons/im";
+
 
 const PersonalDetails = () => {
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = e.target;
     const surname = data.surname.value;
     const givenName = data.givenName.value;
     const gender = data.gender.value;
+    const status = data.status.value;
     const date = data.date.value;
     const city = data.city.value;
     const identy = data.identy.value;
@@ -47,6 +53,7 @@ const PersonalDetails = () => {
     formData.append("surname", surname);
     formData.append("givenName", givenName);
     formData.append("gender", gender);
+    formData.append("status", status);
     formData.append("date", date);
     formData.append("city", city);
     formData.append("identy", identy);
@@ -63,6 +70,7 @@ const PersonalDetails = () => {
     formData.append("note", note);
 
     try {
+      setLoading(true);
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/upload`,
         formData,
@@ -72,12 +80,19 @@ const PersonalDetails = () => {
           },
         }
       );
-      toast.success("Information uploaded successfully!");
-      console.log(response.data);
+      if (response.data.insertedId) {
+        setLoading(false);
+        toast.success("Information uploaded successfully!");
+      } else if (response.data.message) {
+        toast.error(response.data.message)
+        setLoading(false)
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error("Failed to submit form.");
+      setLoading(false);
     }
+    
   };
 
   return (
@@ -85,7 +100,7 @@ const PersonalDetails = () => {
       <Box>
         <SectionTitle>Upload clients visa information</SectionTitle>
 
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mt-4">
             <input
               required
@@ -228,6 +243,11 @@ const PersonalDetails = () => {
               placeholder="Note (if any)"
               className="input-box"
             />
+            <select name="status" id="status" className="input-box" required>
+              <option value="approved">Approved</option>
+              <option value="Pending">Pending</option>
+              <option value="rejected">Rejected</option>
+            </select>
           </div>
 
           <h3 className="gradient-text text-xl md:text-2xl lg:text-3xl text-center font-semibold mt-5">
@@ -286,7 +306,15 @@ const PersonalDetails = () => {
           </div>
 
           <div className="flex justify-center items-center">
-            <input type="submit" value="Upload Now" className="submit-btn" />
+            {loading ? (
+              <button className="submit-btn">
+                <ImSpinner4 size={24} className="animate-spin" />
+              </button>
+            ) : (
+              <button className="submit-btn">
+                <input type="submit" value="Upload Now" />
+              </button>
+            )}
           </div>
         </form>
       </Box>

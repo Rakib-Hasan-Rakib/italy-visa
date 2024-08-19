@@ -2,10 +2,8 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
-// import { saveUser } from "../../utils/auth";
 import "./login.css";
 import { AuthContext } from "../../providers/AuthProvider";
-import { saveUser } from "../../utils/auth";
 import toast from "react-hot-toast";
 
 const Login = () => {
@@ -34,7 +32,6 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        saveUser(result.user);
         navigate(from, { replace: true });
         toast.success("you logged in successfully");
       })

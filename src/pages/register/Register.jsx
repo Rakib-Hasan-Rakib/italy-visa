@@ -4,7 +4,6 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import "./register.css";
 import { AuthContext } from "../../providers/AuthProvider";
-import { saveUser } from "../../utils/auth";
 import toast from "react-hot-toast";
 
 const Register = () => {
@@ -46,7 +45,6 @@ const Register = () => {
             updateUserProfile(name, imageUrl)
               .then(() => {
                 console.log(result.user);
-                saveUser(result.user);
                 navigate(from, { replace: true });
                 toast.success("you logged in successfully");
               })
@@ -69,8 +67,6 @@ const Register = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result.user);
-        saveUser(result.user);
         navigate(from, { replace: true });
         toast.success("you logged in successfully")
       })
