@@ -10,14 +10,10 @@ const UpdateResult = ({ passNum }) => {
 
     const pdf9 = e.target.pdf9.files[0];
     const pdf10 = e.target.pdf10.files[0];
-    const pdf11 = e.target.pdf11.files[0];
-    const pdf12 = e.target.pdf12.files[0];
 
     const formData = new FormData();
     formData.append("pdf9", pdf9);
     formData.append("pdf10", pdf10);
-    formData.append("pdf11", pdf11);
-    formData.append("pdf12", pdf12);
     try {
       setLoading(true);
       const response = await axios.put(
@@ -53,8 +49,6 @@ const UpdateResult = ({ passNum }) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <input type="file" name="pdf9" accept=".pdf" className="input-box" />
           <input type="file" name="pdf10" accept=".pdf" className="input-box" />
-          <input type="file" name="pdf11" accept=".pdf" className="input-box" />
-          <input type="file" name="pdf12" accept=".pdf" className="input-box" />
         </div>
         <div className="flex justify-center items-center">
           {loading ? (

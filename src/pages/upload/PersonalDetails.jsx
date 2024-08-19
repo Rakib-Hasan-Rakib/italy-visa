@@ -37,8 +37,6 @@ const PersonalDetails = () => {
     const pdf4 = data.pdf4.files[0];
     const pdf5 = data.pdf5.files[0];
     const pdf6 = data.pdf6.files[0];
-    const pdf7 = data.pdf7.files[0];
-    const pdf8 = data.pdf8.files[0];
 
     const formData = new FormData();
     formData.append("image", image);
@@ -48,8 +46,6 @@ const PersonalDetails = () => {
     formData.append("pdf4", pdf4);
     formData.append("pdf5", pdf5);
     formData.append("pdf6", pdf6);
-    formData.append("pdf7", pdf7);
-    formData.append("pdf8", pdf8);
     formData.append("surname", surname);
     formData.append("givenName", givenName);
     formData.append("gender", gender);
@@ -78,13 +74,9 @@ const PersonalDetails = () => {
       });
 
       console.log(response);
-      // if (response.data.insertedId) {
-      //   setLoading(false);
-      //   toast.success("Information uploaded successfully!");
-      // } else if (response.data.message) {
-      //   toast.error(response.data.message)
-      //   setLoading(false)
-      // }
+      if (response.data.insertedId) {
+        toast.success("Information uploaded successfully!");
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error("Failed to submit form.");
@@ -286,18 +278,6 @@ const PersonalDetails = () => {
             <input
               type="file"
               name="pdf6"
-              accept=".pdf"
-              className="input-box"
-            />
-            <input
-              type="file"
-              name="pdf7"
-              accept=".pdf"
-              className="input-box"
-            />
-            <input
-              type="file"
-              name="pdf8"
               accept=".pdf"
               className="input-box"
             />
