@@ -4,7 +4,7 @@ import SectionTitle from "../../components/SectionTitle";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { ImSpinner4 } from "react-icons/im";
-
+import { BASE_URL } from "../../../BASE_URL";
 
 const PersonalDetails = () => {
   const [loading, setLoading] = useState(false);
@@ -71,28 +71,26 @@ const PersonalDetails = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/upload`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      if (response.data.insertedId) {
-        setLoading(false);
-        toast.success("Information uploaded successfully!");
-      } else if (response.data.message) {
-        toast.error(response.data.message)
-        setLoading(false)
-      }
+      const response = await axios.post(`${BASE_URL}/upload`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      console.log(response);
+      // if (response.data.insertedId) {
+      //   setLoading(false);
+      //   toast.success("Information uploaded successfully!");
+      // } else if (response.data.message) {
+      //   toast.error(response.data.message)
+      //   setLoading(false)
+      // }
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error("Failed to submit form.");
+    } finally {
       setLoading(false);
     }
-    
   };
 
   return (
