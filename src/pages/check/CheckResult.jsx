@@ -221,13 +221,13 @@ const CheckResult = () => {
                     Duty Duration
                   </td>
                   <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {dutyDuration}
+                    {dutyDuration} hours
                   </td>
                   <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
                     Salary
                   </td>
                   <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {salary}
+                    $ {salary}
                   </td>
                 </tr>
                 <tr>
