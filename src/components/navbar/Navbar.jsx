@@ -48,27 +48,28 @@ const Navbar = () => {
         <div className="navbar py-2 flex justify-between items-center w-11/12 mx-auto">
           <Link
             to="/"
-            className="text-xl tracking-wide md:tracking-widest text-white flex items-center gap-4 md:hidden"
+            className="text-xl tracking-wide md:tracking-widest text-white flex items-center gap-1 md:hidden"
           >
             <img
               src="https://i.ibb.co/mD1MtRM/canada-flag.png"
               alt="brand logo"
               className="w-12 lg:w-20 2xl:w-32"
             />
-            <p className="logo-text lg:text-2xl">Canada Visa</p>
+            <p className="logo-text lg:text-2xl -mt-2">Canada Visa</p>
           </Link>
           <div className="dropdown z-50">
             <label tabIndex={0} className="btn btn-ghost md:hidden">
               {showMenu && (
                 <FiMenu
                   onClick={() => setShowMenu(false)}
-                  className="h-6 w-6 text-white"
+                  className="h-6 w-6 text-white bg-blue-600 p-[2px]"
                 />
               )}
               {showMenu || (
                 <FiMenu
+                  size={60}
                   onClick={() => setShowMenu(true)}
-                  className="h-6 w-6 text-white"
+                  className="h-6 w-6 text-white bg-blue-600 p-[2px]"
                 />
               )}
             </label>
