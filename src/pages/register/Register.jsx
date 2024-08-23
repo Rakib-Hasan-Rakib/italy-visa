@@ -44,23 +44,22 @@ const Register = () => {
           .then((result) => {
             updateUserProfile(name, imageUrl)
               .then(() => {
-                console.log(result.user);
                 navigate(from, { replace: true });
                 toast.success("you logged in successfully");
               })
               .catch((err) => {
                 setLoading(false);
-                console.log(err.message);
+                toast.error(err.message);
               });
           })
           .catch((err) => {
             setLoading(false);
-            console.log(err.message);
+            toast.error(err.message);
           });
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err.message);
+        toast.error(err.message);
       });
   };
 
@@ -72,7 +71,6 @@ const Register = () => {
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err.message);
         toast.error(err.message);
       });
   };

@@ -76,7 +76,6 @@ const PersonalDetails = () => {
         }
       );
 
-      console.log(response);
       if (response.data.insertedId) {
         toast.success("Information uploaded successfully!");
       }
@@ -251,37 +250,37 @@ const PersonalDetails = () => {
             <input
               type="file"
               name="pdf1"
-              accept=".pdf"
+              accept="image/*"
               className="input-box"
             />
             <input
               type="file"
               name="pdf2"
-              accept=".pdf"
+              accept="image/*"
               className="input-box"
             />
             <input
               type="file"
               name="pdf3"
-              accept=".pdf"
+              accept="image/*"
               className="input-box"
             />
             <input
               type="file"
               name="pdf4"
-              accept=".pdf"
+              accept="image/*"
               className="input-box"
             />
             <input
               type="file"
               name="pdf5"
-              accept=".pdf"
+              accept="image/*"
               className="input-box"
             />
             <input
               type="file"
               name="pdf6"
-              accept=".pdf"
+              accept="image/*"
               className="input-box"
             />
           </div>

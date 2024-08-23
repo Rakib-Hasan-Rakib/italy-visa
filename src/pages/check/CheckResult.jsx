@@ -57,7 +57,6 @@ const CheckResult = () => {
 
       const result = await response.json();
       if (response.ok) {
-        console.log(result);
         if (result.deletedCount > 0) {
           setResult({});
           toast.success("Information deleted successfully");
@@ -66,7 +65,6 @@ const CheckResult = () => {
         toast.error(result.message);
       }
     } catch (error) {
-      console.log("Error:", error);
       toast.error(error);
     }
   };
@@ -296,13 +294,8 @@ const CheckResult = () => {
                   cloudDoc.map((data, i) => {
                     if (data) {
                       return (
-                        <embed
-                          key={i}
-                          src={data?.fileUrl}
-                          type="application/pdf"
-                          width="100%"
-                          height="600px"
-                        />
+                          <img key={i} src={data?.fileUrl} alt="documents" className="w-full h-full rounded-md object-cover object-center" />
+                        
                       );
                     }
                   })}

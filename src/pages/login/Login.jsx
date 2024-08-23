@@ -18,27 +18,24 @@ const Login = () => {
     const password = e.target.password.value;
     signIn(email, password)
       .then((result) => {
-        console.log(result.user);
         navigate(from, { replace: true });
         toast.success("you logged in successfully");
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err.message);
+        toast.error(err.message);
       });
   };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result.user);
         navigate(from, { replace: true });
         toast.success("you logged in successfully");
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err.message);
-        // toast.error(err.message);
+        toast.error(err.message);
       });
   };
   return (

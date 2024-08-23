@@ -27,7 +27,6 @@ const UpdateResult = ({ passNum }) => {
           },
         }
       );
-      console.log(response.data);
       if (response.data.modifiedCount) {
         setLoading(false);
         toast.success("Information uploaded successfully!");
@@ -53,13 +52,13 @@ const UpdateResult = ({ passNum }) => {
             <input
               type="file"
               name="pdf9"
-              accept=".pdf"
+              accept="image/*"
               className="input-box"
             />
             <input
               type="file"
               name="pdf10"
-              accept=".pdf"
+              accept="image/*"
               className="input-box"
             />
           </div>
