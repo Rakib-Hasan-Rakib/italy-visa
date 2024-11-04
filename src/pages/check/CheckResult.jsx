@@ -23,27 +23,7 @@ const CheckResult = () => {
       });
   }, []);
 
-  let {
-    _id,
-    status,
-    surname,
-    givenName,
-    date,
-    gender,
-    city,
-    identy,
-    nationality,
-    nid,
-    companyName,
-    jobTitle,
-    dutyDuration,
-    salary,
-    issuedCountry,
-    phoneNum,
-    email,
-    note,
-    finalCloudDoc,
-  } = result;
+  let { _id, status, surname, givenName, date, email, finalCloudDoc } = result;
   const cloudDoc = finalCloudDoc?.slice(1);
 
   const handleDeleteData = async (id) => {
@@ -89,11 +69,11 @@ const CheckResult = () => {
                 <p>
                   Status :
                   <span
-                    className={
-                      status == "approved"
-                        ? "text-green-500 font-semibold"
-                        : "text-red-500 font-semibold"
-                    }
+                    className={`font-semibold capitalize ${
+                      status == "approved" ? "text-green-500" : ""
+                    } ${
+                      status == "pending" ? "text-yellow-400" : "text-red-600"
+                    }`}
                   >
                     &nbsp;{status}
                   </span>
@@ -117,9 +97,9 @@ const CheckResult = () => {
                 <tr>
                   <td
                     colSpan={4}
-                    className="text-center font-semibold bg-green-300 py-1"
+                    className="text-center font-semibold bg-green-300 py-1 capitalize"
                   >
-                    Personal details
+                    applicant's details
                   </td>
                 </tr>
                 <tr className="bg-gray-50">
@@ -149,13 +129,12 @@ const CheckResult = () => {
                     {givenName}
                   </td>
                 </tr>
-
                 <tr>
                   <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Gender
+                    Passport Number
                   </td>
                   <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {gender}
+                    {passportNum}
                   </td>
                   <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
                     Date of Birth
@@ -166,118 +145,10 @@ const CheckResult = () => {
                 </tr>
                 <tr>
                   <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Place of Birth
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {city}
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Visible Identyfication Marks
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {identy}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Nationality
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {nationality}
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    National ID
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {nid}
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    colSpan={4}
-                    className="text-center font-semibold bg-green-300 py-1"
-                  >
-                    Company details
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Company Name
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {companyName}
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Job Title
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {jobTitle}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Duty Duration
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {dutyDuration} hours
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Salary
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    $ {salary}
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    colSpan={4}
-                    className="text-center font-semibold bg-green-300 py-1"
-                  >
-                    Passport Details
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Passport Number
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {passportNum}
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Issued Country
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {issuedCountry}
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    colSpan={4}
-                    className="text-center font-semibold bg-green-300 py-1"
-                  >
-                    Applicant's Contact Details
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Phone
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {phoneNum}
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
                     Email
                   </td>
                   <td className="px-6 py-2 border-b text-sm text-gray-700">
                     {email}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700 font-semibold">
-                    Note
-                  </td>
-                  <td className="px-6 py-2 border-b text-sm text-gray-700">
-                    {note}
                   </td>
                 </tr>
               </tbody>
@@ -294,8 +165,12 @@ const CheckResult = () => {
                   cloudDoc.map((data, i) => {
                     if (data) {
                       return (
-                          <img key={i} src={data?.fileUrl} alt="documents" className="w-full h-full rounded-md object-cover object-center" />
-                        
+                        <img
+                          key={i}
+                          src={data?.fileUrl}
+                          alt="documents"
+                          className="w-full h-full rounded-md object-cover object-center"
+                        />
                       );
                     }
                   })}

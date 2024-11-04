@@ -46,7 +46,7 @@
 .input-box {
     border: 1px solid #09e5e5;
     border-radius: 5px;
-    @apply w-full px-2 py-1 focus:outline-none text-black
+    @apply w-full px-2 py-1 focus:outline-none text-black h-10
 }
 
 .input-box:focus {

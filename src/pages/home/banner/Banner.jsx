@@ -27,8 +27,8 @@ const Banner = () => {
         <SwiperSlide>
           <img
             className="relative h-[100vh] w-full object-cover"
-            src="https://i.ibb.co/MPxYZmJ/canada-banner-one.jpg"
-            alt="man fashion banner"
+            src="https://i.ibb.co.com/BBNtrN0/canada-banner-one.jpg"
+            alt="canada image"
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>
@@ -42,8 +42,8 @@ const Banner = () => {
         <SwiperSlide>
           <img
             className="relative h-[100vh] w-full object-cover"
-            src="https://i.ibb.co/bPxLtxv/canada-banner-two.jpg"
-            alt="women fashion banner"
+            src="https://i.ibb.co.com/3Ww9N0H/canada-banner-two.jpg"
+            alt="canada image"
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>
@@ -57,8 +57,8 @@ const Banner = () => {
         <SwiperSlide>
           <img
             className="relative h-[100vh] w-full object-cover"
-            src="https://i.ibb.co/LpGQR8t/canada-banner-three.jpg"
-            alt="children fashion banner"
+            src="https://i.ibb.co.com/3YjXQQ2/canada-banner-three.jpg"
+            alt="canada image"
           />
           <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 overlay flex flex-col justify-center items-center text-white text-lg md:text-2xl">
             <Fade delay={100}>

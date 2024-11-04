@@ -13,22 +13,10 @@ const PersonalDetails = () => {
     const data = e.target;
     const surname = data.surname.value;
     const givenName = data.givenName.value;
-    const gender = data.gender.value;
     const status = data.status.value;
     const date = data.date.value;
-    const city = data.city.value;
-    const identy = data.identy.value;
-    const nationality = data.nationality.value;
-    const nid = data.nid.value;
-    const companyName = data.companyName.value;
-    const jobTitle = data.jobTitle.value;
-    const dutyDuration = data.dutyDuration.value;
-    const salary = data.salary.value;
     const passportNum = data.passportNum.value;
-    const issuedCountry = data.issuedCountry.value;
-    const phoneNum = data.phoneNum.value;
     const email = data.email.value;
-    const note = data.note.value;
     const image = data.image.files[0];
     const pdf1 = data.pdf1.files[0];
     const pdf2 = data.pdf2.files[0];
@@ -47,22 +35,10 @@ const PersonalDetails = () => {
     formData.append("pdf6", pdf6);
     formData.append("surname", surname);
     formData.append("givenName", givenName);
-    formData.append("gender", gender);
     formData.append("status", status);
     formData.append("date", date);
-    formData.append("city", city);
-    formData.append("identy", identy);
-    formData.append("nationality", nationality);
-    formData.append("nid", nid);
-    formData.append("companyName", companyName);
-    formData.append("jobTitle", jobTitle);
-    formData.append("dutyDuration", dutyDuration);
-    formData.append("salary", salary);
     formData.append("passportNum", passportNum);
-    formData.append("issuedCountry", issuedCountry);
-    formData.append("phoneNum", phoneNum);
     formData.append("email", email);
-    formData.append("note", note);
 
     try {
       setLoading(true);
@@ -86,6 +62,7 @@ const PersonalDetails = () => {
       setLoading(false);
     }
   };
+  let required = <span className="text-red-600">*</span>;
 
   return (
     <>
@@ -94,152 +71,94 @@ const PersonalDetails = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mt-4">
-            <input
-              required
-              type="file"
-              id="image"
-              name="image"
-              accept="image/*"
-              placeholder="select image"
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="surname"
-              id="surname"
-              placeholder="Surname *"
-              required
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="givenName"
-              id="givenName"
-              placeholder="Given name *"
-              required
-              className="input-box"
-            />
-            <select name="gender" id="gender" className="input-box" required>
-              <option value="select">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-            <input
-              aria-label="Date"
-              type="date"
-              name="date"
-              required
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="city"
-              id="city"
-              placeholder="City name *"
-              required
-              className="input-box"
-            />
-            <input
-              type="number"
-              name="identy"
-              id="identy"
-              placeholder="Identification number *"
-              required
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="nationality"
-              id="nationality"
-              placeholder="Nationality *"
-              required
-              className="input-box"
-            />
-            <input
-              type="number"
-              name="nid"
-              id="nid"
-              placeholder="National ID card *"
-              required
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="companyName"
-              id="companyName"
-              placeholder="Company name *"
-              required
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="jobTitle"
-              id="jobTitle"
-              placeholder="Job title *"
-              required
-              className="input-box"
-            />
-            <input
-              type="number"
-              name="dutyDuration"
-              id="dutyDuration"
-              placeholder="Duty duration *"
-              required
-              className="input-box"
-            />
-            <input
-              type="number"
-              name="salary"
-              id="salary"
-              placeholder="Salary *"
-              required
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="passportNum"
-              id="passportNum"
-              placeholder="Passport number *"
-              required
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="issuedCountry"
-              id="issuedCountry"
-              placeholder="Passport issued country *"
-              required
-              className="input-box"
-            />
-            <input
-              type="number"
-              name="phoneNum"
-              id="phoneNum"
-              placeholder="Phone number *"
-              required
-              className="input-box"
-            />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email address *"
-              required
-              className="input-box"
-            />
-            <input
-              type="text"
-              name="note"
-              id="note"
-              placeholder="Note (if any)"
-              className="input-box"
-            />
-            <select name="status" id="status" className="input-box" required>
-              <option value="approved">Approved</option>
-              <option value="Pending">Pending</option>
-              <option value="rejected">Rejected</option>
-            </select>
+            <div>
+              <label className="lg:text-lg capitalize">
+                Select image{required}
+              </label>
+              <input
+                required
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+                placeholder="select image"
+                className="input-box"
+              />
+            </div>
+            <div>
+              <label className="lg:text-lg capitalize">surname{required}</label>
+              <input
+                type="text"
+                name="surname"
+                id="surname"
+                placeholder="Surname *"
+                required
+                className="input-box"
+              />
+            </div>
+            <div>
+              <label className="lg:text-lg capitalize">
+                given name{required}
+              </label>
+              <input
+                type="text"
+                name="givenName"
+                id="givenName"
+                placeholder="Given name *"
+                required
+                className="input-box"
+              />
+            </div>
+
+            <div>
+              <label className="lg:text-lg capitalize">
+                date of birth{required}
+              </label>
+              <input
+                aria-label="Date"
+                type="date"
+                name="date"
+                required
+                className="input-box"
+              />
+            </div>
+
+            <div>
+              <label className="lg:text-lg capitalize">
+                passport number{required}
+              </label>
+              <input
+                type="text"
+                name="passportNum"
+                id="passportNum"
+                placeholder="Passport number *"
+                required
+                className="input-box"
+              />
+            </div>
+
+            <div>
+              <label className="lg:text-lg capitalize">email{required}</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email address *"
+                required
+                className="input-box"
+              />
+            </div>
+
+            <div>
+              <label className="lg:text-lg capitalize">
+                visa status{required}
+              </label>
+              <select name="status" id="status" className="input-box" required>
+                <option value="approved">Approved</option>
+                <option value="pending">Pending</option>
+                <option value="rejected">Rejected</option>
+              </select>
+            </div>
           </div>
 
           <h3 className="gradient-text text-xl md:text-2xl lg:text-3xl text-center font-semibold mt-5">
