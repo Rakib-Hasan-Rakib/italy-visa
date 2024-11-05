@@ -4,6 +4,7 @@ import SectionTitle from "../../components/SectionTitle";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { ImSpinner4 } from "react-icons/im";
+import emailjs from "emailjs-com";
 
 const PersonalDetails = () => {
   const [loading, setLoading] = useState(false);
@@ -54,6 +55,29 @@ const PersonalDetails = () => {
 
       if (response.data.insertedId) {
         toast.success("Information uploaded successfully!");
+        emailjs
+          .send(
+            import.meta.env.VITE_SERVICE_ID,
+            import.meta.env.VITE_TEMPLATE_ID,
+            {
+              to_email: email,
+              givenName,
+              surname,
+              passportNum,
+              status,
+            },
+            import.meta.env.VITE_PUBLIC_KEY
+          )
+          .then(
+            (result) => {
+              console.log(result);
+              toast.success(`Email sent to ${email}`);
+            },
+            (error) => {
+              console.log(error);
+              toast.error(`Failed to send email due to ${error?.text}`);
+            }
+          );
       }
     } catch (error) {
       console.error("Error submitting form:", error);

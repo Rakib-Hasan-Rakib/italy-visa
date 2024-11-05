@@ -16,15 +16,20 @@ const Navbar = () => {
       <li className="navlink">
         <Link to="/info">Visa Information</Link>
       </li>
+      <li className="navlink">
+        <Link to="/check">Visa Check</Link>
+      </li>
       {user?.email == "haquemdnurul108@gmail.com" && (
         <li className="navlink">
           <Link to="/uploadData">Upload Data</Link>
         </li>
       )}
+      {user?.email == "haquemdnurul108@gmail.com" && (
+        <li className="navlink">
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
 
-      <li className="navlink">
-        <Link to="/check">Visa Check</Link>
-      </li>
       <li className="navlink">
         {user ? (
           <Link onClick={() => logOut()}>Logout</Link>
