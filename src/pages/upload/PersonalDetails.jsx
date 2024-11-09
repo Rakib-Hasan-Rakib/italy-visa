@@ -18,6 +18,7 @@ const PersonalDetails = () => {
     const date = data.date.value;
     const passportNum = data.passportNum.value;
     const email = data.email.value;
+    const message = data.message.value;
     const image = data.image.files[0];
     const pdf1 = data.pdf1.files[0];
     const pdf2 = data.pdf2.files[0];
@@ -40,6 +41,7 @@ const PersonalDetails = () => {
     formData.append("date", date);
     formData.append("passportNum", passportNum);
     formData.append("email", email);
+    formData.append("message", message);
 
     try {
       setLoading(true);
@@ -65,6 +67,7 @@ const PersonalDetails = () => {
               surname,
               passportNum,
               status,
+              message,
             },
             import.meta.env.VITE_PUBLIC_KEY
           )
@@ -182,6 +185,19 @@ const PersonalDetails = () => {
                 <option value="pending">Pending</option>
                 <option value="rejected">Rejected</option>
               </select>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 mt-4">
+            <div>
+              <label className="lg:text-lg capitalize">
+                Message (Optional)
+              </label>
+              <textarea
+                name="message"
+                rows="5"
+                className="border border-[#09e5e5] w-full px-2 py-1 focus:outline-none text-black"
+              ></textarea>
             </div>
           </div>
 

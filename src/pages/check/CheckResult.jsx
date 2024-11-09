@@ -70,9 +70,7 @@ const CheckResult = () => {
                   Status :
                   <span
                     className={`font-semibold capitalize ${
-                      status == "approved" ? "text-green-500" : ""
-                    } ${
-                      status == "pending" ? "text-yellow-400" : "text-red-600"
+                      status == "approved" ? "text-green-500" : "text-red-600"
                     }`}
                   >
                     &nbsp;{status}
